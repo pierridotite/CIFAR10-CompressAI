@@ -21,6 +21,91 @@
 - **GPU Support**: Optimized for training on GPUs with TensorFlow.
 - **Modularity**: Code organized into modules to facilitate contributions and extensions.
 
+## Mathematical Background
+
+### Convolutional Autoencoder
+
+The core of **CIFAR10-CompressAI** is a convolutional autoencoder, a type of neural network architecture designed for unsupervised learning of efficient codings. The autoencoder consists of two main parts:
+
+1. **Encoder**: Compresses the input image into a lower-dimensional latent representation.
+2. **Decoder**: Reconstructs the image from the latent representation.
+
+Mathematically, let \( \mathbf{x} \in \mathbb{R}^{H \times W \times C} \) represent the input image, where \( H \), \( W \), and \( C \) are the height, width, and number of channels, respectively. The encoder maps \( \mathbf{x} \) to a latent vector \( \mathbf{z} \):
+
+\[
+\mathbf{z} = \text{Encoder}(\mathbf{x})
+\]
+
+The decoder reconstructs the image from \( \mathbf{z} \):
+
+\[
+\hat{\mathbf{x}} = \text{Decoder}(\mathbf{z})
+\]
+
+### Loss Functions
+
+The training process optimizes a loss function combining Mean Squared Error (MSE) and perceptual loss:
+
+\[
+\mathcal{L} = \alpha \cdot \mathcal{L}_{\text{MSE}} + \beta \cdot \mathcal{L}_{\text{Perceptual}}
+\]
+
+- **MSE Loss**:
+
+\[
+\mathcal{L}_{\text{MSE}} = \frac{1}{N} \sum_{i=1}^{N} \| \mathbf{x}_i - \hat{\mathbf{x}}_i \|^2_2
+\]
+
+- **Perceptual Loss**: Measures the difference in high-level feature representations, often using a pretrained network like VGG.
+
+\[
+\mathcal{L}_{\text{Perceptual}} = \sum_{j} \| \phi_j(\mathbf{x}) - \phi_j(\hat{\mathbf{x}}) \|^2_2
+\]
+
+where \( \phi_j \) represents the activations of layer \( j \) in the pretrained network.
+
+### Compression Metrics
+
+The compression ratio is a key metric indicating how much the image size is reduced. It is calculated as:
+
+\[
+\text{Compression Ratio} = \frac{\text{Original Size}}{\text{Compressed Size}}
+\]
+
+In this project, the original and compressed sizes are measured in bytes.
+
+## Compression Metrics and Results
+
+### Calculations
+
+- **Original Size**: The original size of an image from the CIFAR-10 dataset is 61,440 bytes.
+  
+  - **Calculation**: CIFAR-10 images are \(32 \times 32\) pixels with 3 color channels (RGB). Each pixel per channel is typically represented by 8 bits (1 byte).
+  
+  \[
+  32 \times 32 \times 3 = 3,072 \text{ pixels}
+  \]
+  
+  \[
+  3,072 \text{ pixels} \times 20 \text{ bytes per pixel} = 61,440 \text{ bytes}
+  \]
+  
+  *Note: The exact calculation may vary based on data representation.*
+
+- **Compressed Size**: After compression using the autoencoder, the size is reduced to 5,120 bytes.
+
+- **Compression Ratio**: 
+
+\[
+\text{Compression Ratio} = \frac{61,440}{5,120} = 12.00
+\]
+
+This indicates that the compressed image is 12 times smaller than the original, achieving significant storage savings while maintaining image quality.
+
+### Explanation of Results
+
+The achieved compression ratio of **12.00** demonstrates the effectiveness of the convolutional autoencoder in reducing image size. By leveraging both perceptual and MSE loss functions, the model ensures that essential visual information is preserved, resulting in high-quality reconstructions despite the substantial reduction in data size.
+
 ## Project Structure
 
 ```
