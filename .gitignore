@@ -1,8 +1,25 @@
-tensorflow/ 
-__pycache__/ 
-*.pyc 
-*.h5 
-*.keras 
-*.ipynb_checkpoints/ 
-models/ 
-data/ 
+# TensorFlow
+tensorflow/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+env/
+
+# Models and data
+models/
+data/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
