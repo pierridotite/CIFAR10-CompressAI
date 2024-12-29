@@ -1,4 +1,3 @@
-```markdown
 # CIFAR10-CompressAI
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
