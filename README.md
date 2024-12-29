@@ -8,8 +8,8 @@
 
 **CIFAR10-CompressAI** est un projet implémentant un autoencodeur convolutionnel pour la compression et la reconstruction d'images du jeu de données CIFAR-10. L'autoencodeur est entraîné en utilisant une combinaison de perte perceptuelle et de perte MSE, offrant une compression efficace tout en préservant la qualité des images reconstruites.
 
-![Courbe de Loss](models/loss_curves.png)
-![Comparaison de Compression](models/comparison.png)
+<img src="models/loss_curves.png" alt="Courbe de Loss" width="200"/>
+<img src="models/comparison.png" alt="Comparaison de Compression" width="200"/>
 
 ## Fonctionnalités
 
