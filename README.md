@@ -6,76 +6,76 @@
 
 ## Description
 
-**CIFAR10-CompressAI** est un projet implémentant un autoencodeur convolutionnel pour la compression et la reconstruction d'images du jeu de données CIFAR-10. L'autoencodeur est entraîné en utilisant une combinaison de perte perceptuelle et de perte MSE, offrant une compression efficace tout en préservant la qualité des images reconstruites.
+**CIFAR10-CompressAI** is a project implementing a convolutional autoencoder for compressing and reconstructing images from the CIFAR-10 dataset. The autoencoder is trained using a combination of perceptual loss and MSE loss, providing efficient compression while preserving the quality of reconstructed images.
 
 <div style="display: flex; justify-content: center;">
-    <img src="models/loss_curves.png" alt="Courbe de Loss" width="300"/>
-    <img src="models/comparison.png" alt="Comparaison de Compression" width="300"/>
+    <img src="models/loss_curves.png" alt="Loss Curve" width="300"/>
+    <img src="models/comparison.png" alt="Compression Comparison" width="300"/>
 </div>
 
-## Fonctionnalités
+## Features
 
-- **Compression efficace** : Utilisation d'un autoencodeur convolutionnel pour réduire la taille des images CIFAR-10.
-- **Reconstructions de haute qualité** : Combinaison de pertes perceptuelle et MSE pour maintenir la qualité des images reconstruites.
-- **Data Augmentation** : Techniques avancées pour améliorer la robustesse du modèle.
-- **Support GPU** : Optimisé pour l'entraînement sur GPU avec TensorFlow.
-- **Modularité** : Code organisé en modules pour faciliter les contributions et les extensions.
+- **Efficient Compression**: Utilizes a convolutional autoencoder to reduce the size of CIFAR-10 images.
+- **High-Quality Reconstructions**: Combines perceptual loss and MSE loss to maintain the quality of reconstructed images.
+- **Data Augmentation**: Advanced techniques to enhance the model's robustness.
+- **GPU Support**: Optimized for training on GPUs with TensorFlow.
+- **Modularity**: Code organized into modules to facilitate contributions and extensions.
 
-## Structure du Projet
+## Project Structure
 
 ```
 CIFAR10-CompressAI/
-├── data/                  # Dossier pour les données
-├── models/                # Sauvegarde des modèles entraînés et des images
-├── notebooks/             # Jupyter notebooks pour l'exploration
-├── src/                   # Code source
+├── data/                  # Folder for data
+├── models/                # Storage for trained models and images
+├── notebooks/             # Jupyter notebooks for exploration
+├── src/                   # Source code
 │   ├── data_preprocessing.py
 │   ├── models.py
 │   ├── train.py
 │   ├── evaluate.py
-├── .gitignore             # Fichiers et dossiers à ignorer par Git
-├── README.md              # Documentation du projet
-├── requirements.txt       # Dépendances du projet
-├── LICENSE                # Licence du projet
-├── CONTRIBUTING.md        # Guide de contribution
+├── .gitignore             # Files and folders to ignore by Git
+├── README.md              # Project documentation
+├── requirements.txt       # Project dependencies
+├── LICENSE                # Project license
+├── CONTRIBUTING.md        # Contribution guide
 ```
 
 ## Installation
 
-1. **Cloner le dépôt**
+1. **Clone the Repository**
 
     ```bash
     git clone https://github.com/pierridotite/CIFAR10-CompressAI.git
     cd CIFAR10-CompressAI
     ```
 
-2. **Créer un environnement virtuel (optionnel mais recommandé)**
+2. **Create a Virtual Environment (Optional but Recommended)**
 
     ```bash
     python -m venv venv
-    venv\Scripts\activate      # Sur Windows
-    source venv/bin/activate   # Sur macOS/Linux
+    venv\Scripts\activate      # On Windows
+    source venv/bin/activate   # On macOS/Linux
     ```
 
-3. **Installer les dépendances**
+3. **Install Dependencies**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-## Utilisation
+## Usage
 
-### Entraînement du Modèle
+### Training the Model
 
-Pour entraîner l'autoencodeur, exécutez :
+To train the autoencoder, run:
 
 ```bash
 python src/train.py
 ```
 
-### Évaluation du Modèle
+### Evaluating the Model
 
-Pour évaluer et comparer les images originales et reconstruites, exécutez :
+To evaluate and compare the original and reconstructed images, run:
 
 ```bash
 python src/evaluate.py
@@ -83,26 +83,26 @@ python src/evaluate.py
 
 ## Contribution
 
-Les contributions sont les bienvenues ! Veuillez consulter le fichier [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
+Contributions are welcome! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details.
 
-## Licence
+## License
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Exemples
+## Examples
 
-### Entraînement
+### Training
 
-![Exemple d'entraînement](models/loss_curves.png)
+![Training Example](models/loss_curves.png)
 
-### Comparaison de Compression
+### Compression Comparison
 
-![Exemple de compression](models/comparison.png)
+![Compression Example](models/comparison.png)
 
-## Utilisation Avancée
+## Advanced Usage
 
-Vous pouvez explorer les notebooks dans le dossier `notebooks/` pour des analyses et visualisations supplémentaires.
+You can explore the notebooks in the `notebooks/` folder for additional analyses and visualizations.
 
 ---
 
-Merci d'utiliser **CIFAR10-CompressAI** ! N'hésitez pas à contribuer et à partager ce projet avec la communauté.
+Thank you for using **CIFAR10-CompressAI**! Feel free to contribute and share this project with the community.
