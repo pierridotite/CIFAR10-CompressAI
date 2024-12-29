@@ -11,6 +11,14 @@
 ![Courbe de Loss](models/loss_curves.png)
 ![Comparaison de Compression](models/comparison.png)
 
+## Fonctionnalités
+
+- **Compression efficace** : Utilisation d'un autoencodeur convolutionnel pour réduire la taille des images CIFAR-10.
+- **Reconstructions de haute qualité** : Combinaison de pertes perceptuelle et MSE pour maintenir la qualité des images reconstruites.
+- **Data Augmentation** : Techniques avancées pour améliorer la robustesse du modèle.
+- **Support GPU** : Optimisé pour l'entraînement sur GPU avec TensorFlow.
+- **Modularité** : Code organisé en modules pour faciliter les contributions et les extensions.
+
 ## Structure du Projet
 
 ```
@@ -78,27 +86,6 @@ Les contributions sont les bienvenues ! Veuillez consulter le fichier [CONTRIBUT
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## Auteurs
-
-- **Votre Nom** - *Développeur principal* - [VotreProfilGitHub](https://github.com/pierridotite)
-
-## Badges Supplémentaires
-
-Vous pouvez ajouter des badges supplémentaires pour améliorer la visibilité de votre projet. Par exemple :
-
-![Issues](https://img.shields.io/github/issues/pierridotite/CIFAR10-CompressAI)
-![Forks](https://img.shields.io/github/forks/pierridotite/CIFAR10-CompressAI)
-![Stars](https://img.shields.io/github/stars/pierridotite/CIFAR10-CompressAI)
-![Watchers](https://img.shields.io/github/watchers/pierridotite/CIFAR10-CompressAI)
-
-## Fonctionnalités
-
-- **Compression efficace** : Utilisation d'un autoencodeur convolutionnel pour réduire la taille des images CIFAR-10.
-- **Reconstructions de haute qualité** : Combinaison de pertes perceptuelle et MSE pour maintenir la qualité des images reconstruites.
-- **Data Augmentation** : Techniques avancées pour améliorer la robustesse du modèle.
-- **Support GPU** : Optimisé pour l'entraînement sur GPU avec TensorFlow.
-- **Modularité** : Code organisé en modules pour faciliter les contributions et les extensions.
 
 ## Exemples
 
