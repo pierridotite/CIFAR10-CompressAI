@@ -1,32 +1,32 @@
 # Contribution Guidelines
 
-Merci de votre intérêt pour contribuer à **PixelSqueeze** ! Voici comment vous pouvez aider :
+Thank you for your interest in contributing to **CIFAR10-CompressAI**! Here's how you can help:
 
-## Comment Contribuer
+## How to Contribute
 
-1. **Fork** ce dépôt.
-2. **Clone** votre fork localement :
+1. **Fork** this repository.
+2. **Clone** your fork locally:
     ```bash
-    git clone https://github.com/VOTRE_NOM_UTILISATEUR/PixelSqueeze.git
+    git clone https://github.com/YOUR_USERNAME/PixelSqueeze.git
     ```
-3. **Créer une branche** pour votre fonctionnalité :
+3. **Create a branch** for your feature:
     ```bash
-    git checkout -b feature/ma-fonctionnalité
+    git checkout -b feature/my-feature
     ```
-4. **Commiter** vos changements :
+4. **Commit** your changes:
     ```bash
-    git commit -m "Ajouter une fonctionnalité"
+    git commit -m "Add a feature"
     ```
-5. **Pousser** vers la branche :
+5. **Push** to the branch:
     ```bash
-    git push origin feature/ma-fonctionnalité
+    git push origin feature/my-feature
     ```
-6. **Ouvrir une Pull Request** sur GitHub.
+6. **Open a Pull Request** on GitHub.
 
-## Signaler des Problèmes
+## Reporting Issues
 
-Si vous trouvez un bug ou avez une suggestion, veuillez ouvrir une issue.
+If you find a bug or have a suggestion, please open an issue.
 
-## Code de Conduite
+## Code of Conduct
 
-Veuillez respecter les [Standards de Code de Conduite](CODE_OF_CONDUCT.md) du projet.
+Please adhere to the [Code of Conduct Standards](CODE_OF_CONDUCT.md) of the project.
