@@ -1,0 +1,8 @@
+tensorflow/ 
+__pycache__/ 
+*.pyc 
+*.h5 
+*.keras 
+*.ipynb_checkpoints/ 
+models/ 
+data/ 

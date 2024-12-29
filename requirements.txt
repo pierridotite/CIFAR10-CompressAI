@@ -1,0 +1,4 @@
+tensorflow==2.12.0
+numpy
+matplotlib
+Commande ECHO d‚sactiv‚e.
