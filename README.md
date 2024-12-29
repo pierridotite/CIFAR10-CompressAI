@@ -1,3 +1,4 @@
+```markdown
 # CIFAR10-CompressAI
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -6,7 +7,7 @@
 
 ## Description
 
-**CIFAR10-CompressAI** is a project implementing a convolutional autoencoder for compressing and reconstructing images from the CIFAR-10 dataset. The autoencoder is trained using a combination of perceptual loss and MSE loss, providing efficient compression while preserving the quality of reconstructed images.
+**CIFAR10-CompressAI** is a project that implements a convolutional autoencoder for compressing and reconstructing images from the CIFAR-10 dataset. The autoencoder is trained using a combination of perceptual loss and Mean Squared Error (MSE) loss, providing efficient compression while preserving the quality of reconstructed images.
 
 <div style="display: flex; justify-content: center;">
     <img src="models/loss_curves.png" alt="Loss Curve" width="300"/>
@@ -15,96 +16,32 @@
 
 ## Features
 
-- **Efficient Compression**: Utilizes a convolutional autoencoder to reduce the size of CIFAR-10 images.
-- **High-Quality Reconstructions**: Combines perceptual loss and MSE loss to maintain the quality of reconstructed images.
-- **Data Augmentation**: Advanced techniques to enhance the model's robustness.
-- **GPU Support**: Optimized for training on GPUs with TensorFlow.
-- **Modularity**: Code organized into modules to facilitate contributions and extensions.
-
-## Mathematical Background
-
-### Convolutional Autoencoder
-
-The core of **CIFAR10-CompressAI** is a convolutional autoencoder, a type of neural network architecture designed for unsupervised learning of efficient codings. The autoencoder consists of two main parts:
-
-1. **Encoder**: Compresses the input image into a lower-dimensional latent representation.
-2. **Decoder**: Reconstructs the image from the latent representation.
-
-Mathematically, let \( \mathbf{x} \in \mathbb{R}^{H \times W \times C} \) represent the input image, where \( H \), \( W \), and \( C \) are the height, width, and number of channels, respectively. The encoder maps \( \mathbf{x} \) to a latent vector \( \mathbf{z} \):
-
-\[
-\mathbf{z} = \text{Encoder}(\mathbf{x})
-\]
-
-The decoder reconstructs the image from \( \mathbf{z} \):
-
-\[
-\hat{\mathbf{x}} = \text{Decoder}(\mathbf{z})
-\]
-
-### Loss Functions
-
-The training process optimizes a loss function combining Mean Squared Error (MSE) and perceptual loss:
-
-\[
-\mathcal{L} = \alpha \cdot \mathcal{L}_{\text{MSE}} + \beta \cdot \mathcal{L}_{\text{Perceptual}}
-\]
-
-- **MSE Loss**:
-
-\[
-\mathcal{L}_{\text{MSE}} = \frac{1}{N} \sum_{i=1}^{N} \| \mathbf{x}_i - \hat{\mathbf{x}}_i \|^2_2
-\]
-
-- **Perceptual Loss**: Measures the difference in high-level feature representations, often using a pretrained network like VGG.
-
-\[
-\mathcal{L}_{\text{Perceptual}} = \sum_{j} \| \phi_j(\mathbf{x}) - \phi_j(\hat{\mathbf{x}}) \|^2_2
-\]
-
-where \( \phi_j \) represents the activations of layer \( j \) in the pretrained network.
-
-### Compression Metrics
-
-The compression ratio is a key metric indicating how much the image size is reduced. It is calculated as:
-
-\[
-\text{Compression Ratio} = \frac{\text{Original Size}}{\text{Compressed Size}}
-\]
-
-In this project, the original and compressed sizes are measured in bytes.
+- **Efficient Compression**: Utilizes a convolutional autoencoder to significantly reduce the size of CIFAR-10 images.
+- **High-Quality Reconstructions**: Combines perceptual loss and MSE loss to maintain the visual quality of reconstructed images.
+- **Data Augmentation**: Implements advanced techniques to enhance the model's robustness and performance.
+- **GPU Support**: Optimized for training on GPUs using TensorFlow, accelerating the training process.
+- **Modularity**: Organized codebase with modular components, facilitating easy contributions and extensions.
 
 ## Compression Metrics and Results
 
-### Calculations
+### Compression Performance
 
-- **Original Size**: The original size of an image from the CIFAR-10 dataset is 61,440 bytes.
-  
-  - **Calculation**: CIFAR-10 images are \(32 \times 32\) pixels with 3 color channels (RGB). Each pixel per channel is typically represented by 8 bits (1 byte).
-  
-  \[
-  32 \times 32 \times 3 = 3,072 \text{ pixels}
-  \]
-  
-  \[
-  3,072 \text{ pixels} \times 20 \text{ bytes per pixel} = 61,440 \text{ bytes}
-  \]
-  
-  *Note: The exact calculation may vary based on data representation.*
-
-- **Compressed Size**: After compression using the autoencoder, the size is reduced to 5,120 bytes.
-
-- **Compression Ratio**: 
-
-\[
-\text{Compression Ratio} = \frac{61,440}{5,120} = 12.00
-\]
-
-This indicates that the compressed image is 12 times smaller than the original, achieving significant storage savings while maintaining image quality.
+- **Original Size**: 61,440 bytes per image
+- **Compressed Size**: 5,120 bytes per image
+- **Compression Ratio**: 12.00
 
 ### Explanation of Results
 
-The achieved compression ratio of **12.00** demonstrates the effectiveness of the convolutional autoencoder in reducing image size. By leveraging both perceptual and MSE loss functions, the model ensures that essential visual information is preserved, resulting in high-quality reconstructions despite the substantial reduction in data size.
+The **compression ratio** of **12.00** indicates that each image is compressed to one-twelfth of its original size. This substantial reduction in size demonstrates the effectiveness of the convolutional autoencoder in minimizing storage requirements without compromising the quality of the images.
+
+**Why This Model Excels:**
+
+- **Balanced Loss Functions**: By leveraging both perceptual loss and MSE loss, the model ensures that reconstructed images retain essential visual features and textures, providing a balance between compression efficiency and image fidelity.
+- **Advanced Architecture**: The convolutional layers in the autoencoder are adept at capturing spatial hierarchies and patterns in images, enabling effective compression.
+- **Data Augmentation**: Enhancing the training data with augmentation techniques makes the model more robust and improves its generalization capabilities.
+- **Optimized Training**: Utilizing GPU acceleration with TensorFlow significantly speeds up the training process, allowing for faster iterations and model improvements.
+
+Overall, **CIFAR10-CompressAI** offers a powerful solution for image compression tasks, achieving high compression ratios while maintaining the quality of the original images.
 
 ## Project Structure
 
